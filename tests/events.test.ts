@@ -134,10 +134,15 @@ describe("events", () => {
                 eventInfo: expect.any(Object),
             });
         });
-
+        mdl.subscribe.recsItemAddToCartClick(event => {
+            event.eventInfo.data.recsUnitId;
+        });
         mdl.subscribe.recsItemAddToCartClick(eventHandler);
         expect(eventHandler).not.toHaveBeenCalled();
-        mdl.publish.recsItemAddToCartClick();
+        mdl.publish.recsItemAddToCartClick({
+            recsUnitId: "test",
+            somethingElse: "foo",
+        });
         expect(eventHandler).toHaveBeenCalledTimes(1);
         mdl.unsubscribe.recsItemAddToCartClick(eventHandler);
         mdl.publish.recsItemAddToCartClick();

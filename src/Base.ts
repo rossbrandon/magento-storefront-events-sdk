@@ -42,13 +42,13 @@ export abstract class Base {
         });
     }
     // Push event to ACDL
-    protected pushEvent(event: EventName, context: CustomContext = {}): void {
+    protected pushEvent<T>(event: EventName, context: T): void {
         window.adobeDataLayer.push((dl: AdobeClientDataLayer) => {
             dl.push({
                 event,
                 eventInfo: {
-                    ...this.getContext<Context>(),
-                    ...context,
+                    context: this.getContext<Context>(),
+                    data: context,
                 },
             });
         });

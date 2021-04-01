@@ -6,6 +6,7 @@
 import { Base } from "./Base";
 import events from "./events";
 import { CustomContext } from "./types/contexts";
+import { RecsUnitRenderContext } from "./types/events";
 
 export default class PublishManager extends Base {
     /**
@@ -60,7 +61,7 @@ export default class PublishManager extends Base {
     /**
      * Publish Recommended Item Add to Cart Click event
      */
-    recsItemAddToCartClick(context?: CustomContext): void {
+    recsItemAddToCartClick(context: RecsUnitRenderContext): void {
         this.pushEvent(events.RECS_ITEM_ADD_TO_CART_CLICK, context);
     }
 
@@ -88,8 +89,8 @@ export default class PublishManager extends Base {
     /**
      * Publish Recommended Unit Render Event
      */
-    recsUnitRender(context?: CustomContext): void {
-        this.pushEvent(events.RECS_UNIT_RENDER, context);
+    recsUnitRender(context: RecsUnitRenderContext): void {
+        this.pushEvent<RecsUnitRenderContext>(events.RECS_UNIT_RENDER, context);
     }
 
     /**

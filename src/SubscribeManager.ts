@@ -5,7 +5,11 @@
 
 import { Base } from "./Base";
 import events from "./events";
-import { ListenerOptions, EventHandler } from "./types/events";
+import {
+    ListenerOptions,
+    EventHandler,
+    RecsUnitRenderContext,
+} from "./types/events";
 
 export default class SubscribeManager extends Base {
     /**
@@ -78,7 +82,7 @@ export default class SubscribeManager extends Base {
      * Subscribe to Recommended Item Add to Cart Click event
      */
     recsItemAddToCartClick(
-        handler: EventHandler,
+        handler: EventHandler<RecsUnitRenderContext>,
         options?: ListenerOptions,
     ): void {
         this.addEventListener(

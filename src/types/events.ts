@@ -35,14 +35,21 @@ export type EventName =
     | typeof events.SIGN_OUT
     | typeof events.UPDATE_CART;
 
-export type Event = {
+export type Event<T> = {
     event: EventName;
-    eventInfo: Context & CustomContext;
+    eventInfo: {
+        context: Context;
+        data: T;
+    };
 };
 
-export type EventHandler = (event: Event) => void;
+export type EventHandler<T> = (event: Event<T>) => void;
 
 export type ListenerOptions = {
     path?: string;
     scope?: "past" | "future" | "all";
 };
+
+export type RecsUnitRenderContext = { recsUnitId: string } & GenericContextData;
+
+type GenericContextData = { [K: string]: unknown };
