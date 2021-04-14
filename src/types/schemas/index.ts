@@ -1,4 +1,5 @@
 export * from "./billingAddress";
+export * from "./category";
 export * from "./customUrl";
 export * from "./experiment";
 export * from "./giftCard";

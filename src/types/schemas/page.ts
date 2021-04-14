@@ -5,6 +5,7 @@
 
 export type Page = {
     pageType: string;
+    action: string;
     eventType?: "pageUnload" | "visibilityHidden";
     maxXOffset: number;
     maxYOffset: number;

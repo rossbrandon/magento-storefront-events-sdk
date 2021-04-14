@@ -5,6 +5,7 @@
 
 import mdl, { MagentoStorefrontEvents } from "../src/index";
 import {
+    generateCategoryContext,
     generateCustomUrlContext,
     generateMagentoExtensionContext,
     generateOrderContext,
@@ -36,6 +37,13 @@ test("data layer should exist", () => {
 });
 
 describe("contexts", () => {
+    test("category context", () => {
+        const context = generateCategoryContext();
+        expect(mdl.context.getCategory()).toBeUndefined();
+        mdl.context.setCustomUrl(context);
+        expect(mdl.context.getCategory()).toEqual(context);
+    });
+
     test("custom url context", () => {
         const context = generateCustomUrlContext();
         expect(mdl.context.getCustomUrl()).toBeUndefined();

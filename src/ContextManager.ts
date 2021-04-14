@@ -18,9 +18,23 @@ import {
     SearchInput,
     SearchResults,
     Order,
+    Category,
 } from "./types/schemas";
 
 export default class ContextManager extends Base {
+    /**
+     * Get category context
+     */
+    getCategory(): Category {
+        return this.getContext<Category>(contexts.CATEGORY_CONTEXT);
+    }
+
+    /**
+     * Set category context
+     */
+    setCategory(context: Category): void {
+        this.setContext<Category>(contexts.CATEGORY_CONTEXT, context);
+    }
     /**
      * Get url context
      */

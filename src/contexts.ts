@@ -4,6 +4,7 @@
  */
 
 const contexts = {
+    CATEGORY_CONTEXT: "categoryContext",
     CUSTOM_URL_CONTEXT: "customUrlContext",
     MAGENTO_EXTENSION_CONTEXT: "magentoExtensionContext",
     ORDER_CONTEXT: "orderContext",

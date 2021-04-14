@@ -5,6 +5,7 @@
 
 import contexts from "../contexts";
 import {
+    Category,
     CustomUrl,
     MagentoExtension,
     Order,
@@ -20,6 +21,7 @@ import {
 } from "./schemas";
 
 export type ContextName =
+    | typeof contexts.CATEGORY_CONTEXT
     | typeof contexts.CUSTOM_URL_CONTEXT
     | typeof contexts.MAGENTO_EXTENSION_CONTEXT
     | typeof contexts.ORDER_CONTEXT
@@ -34,6 +36,7 @@ export type ContextName =
     | typeof contexts.STOREFRONT_INSTANCE_CONTEXT;
 
 export type Context = {
+    [contexts.CATEGORY_CONTEXT]: Category;
     [contexts.CUSTOM_URL_CONTEXT]: CustomUrl;
     [contexts.MAGENTO_EXTENSION_CONTEXT]: MagentoExtension;
     [contexts.ORDER_CONTEXT]: Order;

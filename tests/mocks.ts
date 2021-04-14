@@ -5,6 +5,7 @@
 
 import { CustomUrl } from "../src/types/schemas/customUrl";
 import {
+    Category,
     MagentoExtension,
     Order,
     Page,
@@ -17,6 +18,15 @@ import {
     ShoppingCart,
     StorefrontInstance,
 } from "../src/types/schemas/";
+
+export const generateCategoryContext = (
+    overrides?: Partial<Category>,
+): Category => ({
+    name: "Gear",
+    urlKey: "gear",
+    urlPath: "gear",
+    ...overrides,
+});
 
 export const generateCustomUrlContext = (
     overrides?: Partial<CustomUrl>,
@@ -48,6 +58,7 @@ export const generateOrderContext = (overrides?: Partial<Order>): Order => ({
 
 export const generatePageContext = (overrides?: Partial<Page>): Page => ({
     pageType: "pdp",
+    action: "product-view",
     eventType: "visibilityHidden",
     maxXOffset: 0,
     maxYOffset: 0,
