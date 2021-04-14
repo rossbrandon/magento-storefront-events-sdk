@@ -6,7 +6,6 @@
 export type StorefrontInstance = {
     environmentId: string;
     alternateEnvironmentId: string;
-    instanceId?: string;
     environment: string;
     storeUrl: string;
     websiteId: number;

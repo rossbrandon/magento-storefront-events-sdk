@@ -10,10 +10,10 @@ export type ShoppingCart = {
     items?: Array<ShoppingCartItem>;
     prices?: Array<Price>;
     totalQuantity: number;
-    couponCode: string;
 };
 
 type Price = {
+    type: string;
     value: number;
     currency?: string;
 };

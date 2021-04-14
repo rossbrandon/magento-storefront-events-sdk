@@ -253,6 +253,7 @@ export const generateStorefrontInstanceContext = (
     baseCurrencyCode: "USD",
     environment: "Test",
     environmentId: "12345",
+    alternateEnvironmentId: "67890",
     storeId: 12345,
     storeName: "Test Store",
     storeUrl: "https://www.test.org",
