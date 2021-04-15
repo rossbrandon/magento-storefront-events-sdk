@@ -10,6 +10,12 @@ export type ShoppingCart = {
     items?: Array<ShoppingCartItem>;
     prices?: Array<Price>;
     totalQuantity: number;
+    subtotalAmount: number;
+    subtotalExcludingTax: number;
+    subtotalIncludingTax: number;
+    possibleOnepageCheckout?: boolean;
+    giftMessageSelected?: boolean;
+    giftWrappingSelected?: boolean;
 };
 
 type Price = {

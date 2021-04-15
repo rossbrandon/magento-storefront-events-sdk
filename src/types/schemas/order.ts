@@ -12,6 +12,4 @@ export type Order = {
     paymentMethodCode: string;
     paymentMethodName: string;
     salesTax: number;
-    subtotalExcludingTax: number;
-    subtotalIncludingTax: number;
 };

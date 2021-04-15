@@ -7,6 +7,7 @@ import mdl, { MagentoStorefrontEvents } from "../src/index";
 import {
     generateCategoryContext,
     generateCustomUrlContext,
+    generateExperimentContext,
     generateMagentoExtensionContext,
     generateOrderContext,
     generatePageContext,
@@ -40,7 +41,7 @@ describe("contexts", () => {
     test("category context", () => {
         const context = generateCategoryContext();
         expect(mdl.context.getCategory()).toBeUndefined();
-        mdl.context.setCustomUrl(context);
+        mdl.context.setCategory(context);
         expect(mdl.context.getCategory()).toEqual(context);
     });
 
@@ -49,6 +50,13 @@ describe("contexts", () => {
         expect(mdl.context.getCustomUrl()).toBeUndefined();
         mdl.context.setCustomUrl(context);
         expect(mdl.context.getCustomUrl()).toEqual(context);
+    });
+
+    test("experiment context", () => {
+        const context = generateExperimentContext();
+        expect(mdl.context.getExperiment()).toBeUndefined();
+        mdl.context.setExperiment(context);
+        expect(mdl.context.getExperiment()).toEqual(context);
     });
 
     test("magento extension context", () => {

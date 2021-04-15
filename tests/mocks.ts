@@ -6,6 +6,7 @@
 import { CustomUrl } from "../src/types/schemas/customUrl";
 import {
     Category,
+    Experiment,
     MagentoExtension,
     Order,
     Page,
@@ -35,6 +36,14 @@ export const generateCustomUrlContext = (
     ...overrides,
 });
 
+export const generateExperimentContext = (
+    overrides?: Partial<Experiment>,
+): Experiment => ({
+    experimentName: "MyExperiment",
+    variantName: "MyVariant",
+    ...overrides,
+});
+
 export const generateMagentoExtensionContext = (
     overrides?: Partial<MagentoExtension>,
 ): MagentoExtension => ({
@@ -51,8 +60,6 @@ export const generateOrderContext = (overrides?: Partial<Order>): Order => ({
     paymentMethodCode: "giftcard",
     paymentMethodName: "giftcard",
     salesTax: 7,
-    subtotalExcludingTax: 111,
-    subtotalIncludingTax: 123,
     ...overrides,
 });
 
@@ -244,6 +251,9 @@ export const generateShoppingCartContext = (
 ): ShoppingCart => ({
     totalQuantity: 5,
     id: "1",
+    subtotalAmount: 3.41,
+    subtotalExcludingTax: 2.57,
+    subtotalIncludingTax: 3.41,
     ...overrides,
 });
 

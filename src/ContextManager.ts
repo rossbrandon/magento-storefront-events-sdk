@@ -19,6 +19,7 @@ import {
     SearchResults,
     Order,
     Category,
+    Experiment,
 } from "./types/schemas";
 
 export default class ContextManager extends Base {
@@ -35,6 +36,7 @@ export default class ContextManager extends Base {
     setCategory(context: Category): void {
         this.setContext<Category>(contexts.CATEGORY_CONTEXT, context);
     }
+
     /**
      * Get url context
      */
@@ -47,6 +49,20 @@ export default class ContextManager extends Base {
      */
     setCustomUrl(context: CustomUrl): void {
         this.setContext<CustomUrl>(contexts.CUSTOM_URL_CONTEXT, context);
+    }
+
+    /**
+     * Get experiment context
+     */
+    getExperiment(): Experiment {
+        return this.getContext<Experiment>(contexts.EXPERIMENT_CONTEXT);
+    }
+
+    /**
+     * Set experiment context
+     */
+    setExperiment(context: Experiment): void {
+        this.setContext<Experiment>(contexts.EXPERIMENT_CONTEXT, context);
     }
 
     /**

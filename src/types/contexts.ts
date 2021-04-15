@@ -7,6 +7,7 @@ import contexts from "../contexts";
 import {
     Category,
     CustomUrl,
+    Experiment,
     MagentoExtension,
     Order,
     Page,
@@ -23,6 +24,7 @@ import {
 export type ContextName =
     | typeof contexts.CATEGORY_CONTEXT
     | typeof contexts.CUSTOM_URL_CONTEXT
+    | typeof contexts.EXPERIMENT_CONTEXT
     | typeof contexts.MAGENTO_EXTENSION_CONTEXT
     | typeof contexts.ORDER_CONTEXT
     | typeof contexts.PAGE_CONTEXT
@@ -38,6 +40,7 @@ export type ContextName =
 export type Context = {
     [contexts.CATEGORY_CONTEXT]: Category;
     [contexts.CUSTOM_URL_CONTEXT]: CustomUrl;
+    [contexts.EXPERIMENT_CONTEXT]: Experiment;
     [contexts.MAGENTO_EXTENSION_CONTEXT]: MagentoExtension;
     [contexts.ORDER_CONTEXT]: Order;
     [contexts.PAGE_CONTEXT]: Page;
