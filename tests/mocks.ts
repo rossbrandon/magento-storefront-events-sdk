@@ -60,6 +60,8 @@ export const generateOrderContext = (overrides?: Partial<Order>): Order => ({
     paymentMethodCode: "giftcard",
     paymentMethodName: "giftcard",
     salesTax: 7,
+    subtotalExcludingTax: 111,
+    subtotalIncludingTax: 123,
     ...overrides,
 });
 
