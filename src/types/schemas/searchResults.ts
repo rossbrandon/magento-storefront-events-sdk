@@ -24,6 +24,7 @@ export type SearchResultSuggestion = {
 };
 
 export type SearchResults = {
+    searchRequestId: string;
     products: Array<SearchResultProduct>;
     categories: Array<SearchResultCategory>;
     suggestions: Array<SearchResultSuggestion>;
@@ -32,4 +33,17 @@ export type SearchResults = {
     suggestionCount: number;
     page: number;
     perPage: number;
+    facets: Array<SearchFacet> | null;
+};
+
+export type SearchFacet = {
+    attribute: string;
+    dataType: string;
+    facetType: string;
+    buckets: Array<SearchBucket>;
+};
+
+export type SearchBucket = {
+    tite: string;
+    count: number;
 };

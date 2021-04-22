@@ -8,7 +8,10 @@ import { Product } from "./product";
 export type ShoppingCart = {
     id: string | null;
     items?: Array<ShoppingCartItem>;
-    prices?: Array<Price>;
+    prices?: {
+        subtotalExcludingTax?: Price;
+        subtotalIncludingTax?: Price;
+    };
     totalQuantity: number;
     subtotalAmount: number;
     subtotalExcludingTax: number;
@@ -28,7 +31,9 @@ type ShoppingCartItem = {
     canApplyMsrp: boolean;
     formattedPrice: string;
     id: string;
-    prices?: Array<Price>;
+    prices?: {
+        price: Price;
+    };
     product: Product;
     configurableOptions?: Array<ConfigurableOption>;
     quantity?: number;

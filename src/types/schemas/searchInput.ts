@@ -4,6 +4,7 @@
  */
 
 type SearchInput = {
+    searchRequestId: string;
     source: "search-bar" | "results-page" | "custom" | null;
     query: string;
     page: number;

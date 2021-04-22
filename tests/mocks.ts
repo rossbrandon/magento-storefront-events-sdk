@@ -218,6 +218,7 @@ export const generateReferrerUrlContext = (
 export const generateSearchInputContext = (
     overrides?: Partial<SearchInput>,
 ): SearchInput => ({
+    searchRequestId: "abc123",
     source: "search-bar",
     query: "pants",
     page: 1,
@@ -231,6 +232,7 @@ export const generateSearchInputContext = (
 export const generateSearchResultsContext = (
     overrides?: Partial<SearchResults>,
 ): SearchResults => ({
+    searchRequestId: "abc123",
     products: [],
     categories: [],
     suggestions: [],
@@ -239,6 +241,7 @@ export const generateSearchResultsContext = (
     suggestionCount: 0,
     page: 1,
     perPage: 20,
+    facets: [],
     ...overrides,
 });
 
@@ -249,11 +252,19 @@ export const generateShopperContext = (
 export const generateShoppingCartContext = (
     overrides?: Partial<ShoppingCart>,
 ): ShoppingCart => ({
-    totalQuantity: 5,
     id: "1",
-    subtotalAmount: 3.41,
-    subtotalExcludingTax: 2.57,
-    subtotalIncludingTax: 3.41,
+    items: [],
+    prices: {
+        subtotalExcludingTax: {
+            value: 19.99,
+            currency: "USD",
+        },
+        subtotalIncludingTax: {
+            value: 23.23,
+            currency: "USD",
+        },
+    },
+    totalQuantity: 5,
     ...overrides,
 });
 

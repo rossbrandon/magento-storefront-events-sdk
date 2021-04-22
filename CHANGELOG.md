@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/adobe/magento-storefront-events-sdk/compare/v0.9.0...v0.10.0) (2021-04-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* The ShoppingCart context now has a different shape.
+
+SEARCH-1381
+
+### Bug Fixes
+
+* fix shopping cart types ([af4b967](https://github.com/adobe/magento-storefront-events-sdk/commit/af4b9679f91a5d4e8111e8ed5073a59f7c01d098))
+
+## [0.9.0](https://github.com/adobe/magento-storefront-events-sdk/compare/v0.8.1...v0.9.0) (2021-04-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* searchRequestId is a new required property for SearchInput and SearchResults
+context.
+
+SEARCH-1374
+* The SearchResults schema now requires a facets property.
+
+SEARCH-1342
+* The SearchInput context now has a filters property instead of the previous
+refinements properties.
+
+### Features
+
+* add search request id ([cc7b2a3](https://github.com/adobe/magento-storefront-events-sdk/commit/cc7b2a3847b898516290515b5ffc5593a034255d))
+* adjusting the filter types ([c81b53c](https://github.com/adobe/magento-storefront-events-sdk/commit/c81b53cb2b019867eb234a658131d0d76c190cf1))
+* update snowplow schema versions ([caeba1d](https://github.com/adobe/magento-storefront-events-sdk/commit/caeba1d1d211080a4c90d7038510f171c415730c))
+
 ### [0.8.1](https://github.com/adobe/magento-storefront-events-sdk/compare/v0.8.0...v0.8.1) (2021-04-09)
 
 ## [0.8.0](https://github.com/adobe/magento-storefront-events-sdk/compare/v0.7.0...v0.8.0) (2021-04-08)
