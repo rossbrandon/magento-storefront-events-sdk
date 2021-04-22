@@ -13,12 +13,6 @@ export type ShoppingCart = {
         subtotalIncludingTax?: Price;
     };
     totalQuantity: number;
-    subtotalAmount: number;
-    subtotalExcludingTax: number;
-    subtotalIncludingTax: number;
-    possibleOnepageCheckout?: boolean;
-    giftMessageSelected?: boolean;
-    giftWrappingSelected?: boolean;
 };
 
 type Price = {

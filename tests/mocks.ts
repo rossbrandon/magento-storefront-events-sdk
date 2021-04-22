@@ -65,7 +65,6 @@ export const generateOrderContext = (overrides?: Partial<Order>): Order => ({
 
 export const generatePageContext = (overrides?: Partial<Page>): Page => ({
     pageType: "pdp",
-    action: "product-view",
     eventType: "visibilityHidden",
     maxXOffset: 0,
     maxYOffset: 0,
